@@ -16,8 +16,13 @@ local M = {}
 
 M.setup = function(opts)
 	M.opts = {}
-	M.opts.height = opts.height or 50
-	M.opts.width = opts.width or 100
+	if opts ~= nil then
+		M.opts.height = opts.height or 50
+		M.opts.width = opts.width or 100
+	else
+		M.opts.height = 50
+		M.opts.width = 100
+	end
 
 	M.pad = nil
 	M.visible = false

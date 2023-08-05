@@ -10,7 +10,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim)
     "AidanThomas/scratchpad.nvim",
     config = function()
         require("scratchpad").setup()
-     end,
+    end,
 }
 ```
 
