@@ -10,7 +10,9 @@ local function open_window(buf, opts)
 		row = math.floor(ui.height / 2) - math.floor(height / 2),
 		anchor = "NW",
 		style = "minimal",
-		border = "single",
+		border = "rounded",
+		title = "Scratchpad",
+		title_pos = "center",
 	})
 end
 
