@@ -18,8 +18,8 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 Default configuration looks like:
 ```lua
 require("scratchpad").setup({
-    height = 50,
-    width = 100,
+    height = 0.65, -- Expressed as a fraction of UI height
+    width = 0.7, -- Expressed as a fraction of UI width
 })
 ```
 

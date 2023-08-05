@@ -1,11 +1,13 @@
 local function open_window(buf, opts)
 	local ui = vim.api.nvim_list_uis()[1]
+	local height = opts.height * ui.height
+	local width = opts.width * ui.width
 	vim.api.nvim_open_win(buf, true, {
 		relative = "win",
-		width = opts.width,
-		height = opts.height,
-		col = math.floor(ui.width / 2) - math.floor(opts.width / 2),
-		row = math.floor(ui.height / 2) - math.floor(opts.height / 2),
+		width = math.floor(width),
+		height = math.floor(height),
+		col = math.floor(ui.width / 2) - math.floor(width / 2),
+		row = math.floor(ui.height / 2) - math.floor(height / 2),
 		anchor = "NW",
 		style = "minimal",
 		border = "single",
@@ -17,11 +19,11 @@ local M = {}
 M.setup = function(opts)
 	M.opts = {}
 	if opts ~= nil then
-		M.opts.height = opts.height or 50
-		M.opts.width = opts.width or 100
+		M.opts.height = opts.height or 0.65
+		M.opts.width = opts.width or 0.7
 	else
-		M.opts.height = 50
-		M.opts.width = 100
+		M.opts.height = 0.65
+		M.opts.width = 0.7
 	end
 
 	M.pad = nil
